@@ -1,0 +1,3167 @@
+{
+  "benchmark_version": "1.0.0",
+  "dataset_hashes": {
+    "data/gateway.csv": "8945186e3ded7e81b21834e1c5312656fdb3da1af0fd011d7768a2758f24bcff",
+    "data/bank.csv": "6db6886b96b1fd642a0a3df1d009bcbf93750090aaea8180a7cc4386c358edc4",
+    "data/ledger.csv": "89c5bfb92be8a81f45abfe07975affe711b54009daf59453951c54251722f504"
+  },
+  "derivation_methodology": "Independently derived from physical CSV rows of gateway.csv, bank.csv, and ledger.csv using standard csv parsing and financial domain reconciliation rules, independent of production TraceEngine, DiagnosisEngine, or EvidenceBuilder components.",
+  "total_cases": 101,
+  "macro_counts": {
+    "diagnosis_counts": {
+      "MISSING_BANK_RECORD": 11,
+      "SUCCESSFULLY_SETTLED": 84,
+      "MISSING_LEDGER_RECORD": 1,
+      "BANK_REJECTED": 1,
+      "CONFLICTING_EVIDENCE": 3,
+      "INSUFFICIENT_EVIDENCE": 1
+    },
+    "severity_counts": {
+      "HIGH": 13,
+      "NONE": 84,
+      "CRITICAL": 4
+    },
+    "status_counts": {
+      "EXCEPTION": 16,
+      "RESOLVED": 84,
+      "INSUFFICIENT_DATA": 1
+    }
+  },
+  "cases": [
+    {
+      "transaction_id": "pay_Gz8x1000",
+      "order_id": "order_Odx1000",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "17588",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 2,
+          "record_id": "pay_Gz8x1000"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1001",
+      "order_id": "order_Odx1001",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "111358",
+      "expected_net_cents": "38261",
+      "expected_ledger_cents": "38261",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 3,
+          "record_id": "pay_Gz8x1001"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 2,
+          "record_id": "set_Bnk9x2001",
+          "utr": "UTR721609600"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 2,
+          "record_id": "led_Lgr1x3001"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1002",
+      "order_id": "order_Odx1002",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "35666",
+      "expected_net_cents": "80161",
+      "expected_ledger_cents": "80161",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 4,
+          "record_id": "pay_Gz8x1002"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 3,
+          "record_id": "set_Bnk9x2002",
+          "utr": "UTR738360085"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 3,
+          "record_id": "led_Lgr1x3002"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1003",
+      "order_id": "order_Odx1003",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "63508",
+      "expected_net_cents": "45481",
+      "expected_ledger_cents": "45481",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 5,
+          "record_id": "pay_Gz8x1003"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 4,
+          "record_id": "set_Bnk9x2003",
+          "utr": "UTR142672287"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 4,
+          "record_id": "led_Lgr1x3003"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1004",
+      "order_id": "order_Odx1004",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "121067",
+      "expected_net_cents": "32018",
+      "expected_ledger_cents": "32018",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 6,
+          "record_id": "pay_Gz8x1004"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 5,
+          "record_id": "set_Bnk9x2004",
+          "utr": "UTR765055833"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 5,
+          "record_id": "led_Lgr1x3004"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1005",
+      "order_id": "order_Odx1005",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "14819",
+      "expected_net_cents": "17900",
+      "expected_ledger_cents": "17900",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 7,
+          "record_id": "pay_Gz8x1005"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 6,
+          "record_id": "set_Bnk9x2005",
+          "utr": "UTR188029013"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 6,
+          "record_id": "led_Lgr1x3005"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1006",
+      "order_id": "order_Odx1006",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "7473",
+      "expected_net_cents": "65726",
+      "expected_ledger_cents": "65726",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 8,
+          "record_id": "pay_Gz8x1006"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 7,
+          "record_id": "set_Bnk9x2006",
+          "utr": "UTR550139320"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 7,
+          "record_id": "led_Lgr1x3006"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1007",
+      "order_id": "order_Odx1007",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "83254",
+      "expected_net_cents": "16556",
+      "expected_ledger_cents": "16556",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 9,
+          "record_id": "pay_Gz8x1007"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 8,
+          "record_id": "set_Bnk9x2007",
+          "utr": "UTR805849060"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 8,
+          "record_id": "led_Lgr1x3007"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1008",
+      "order_id": "order_Odx1008",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "34957",
+      "expected_net_cents": "117144",
+      "expected_ledger_cents": "117144",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 10,
+          "record_id": "pay_Gz8x1008"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 9,
+          "record_id": "set_Bnk9x2008",
+          "utr": "UTR726713347"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 9,
+          "record_id": "led_Lgr1x3008"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1009",
+      "order_id": "order_Odx1009",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "42418",
+      "expected_net_cents": "80970",
+      "expected_ledger_cents": "80970",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 11,
+          "record_id": "pay_Gz8x1009"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 10,
+          "record_id": "set_Bnk9x2009",
+          "utr": "UTR706907788"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 10,
+          "record_id": "led_Lgr1x3009"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1010",
+      "order_id": "order_Odx1010",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "105571",
+      "expected_net_cents": "117936",
+      "expected_ledger_cents": "117936",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 12,
+          "record_id": "pay_Gz8x1010"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 11,
+          "record_id": "set_Bnk9x2010",
+          "utr": "UTR661333669"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 11,
+          "record_id": "led_Lgr1x3010"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1011",
+      "order_id": "order_Odx1011",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "25347",
+      "expected_net_cents": "49561",
+      "expected_ledger_cents": "49561",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 13,
+          "record_id": "pay_Gz8x1011"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 12,
+          "record_id": "set_Bnk9x2011",
+          "utr": "UTR439699535"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 12,
+          "record_id": "led_Lgr1x3011"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1012",
+      "order_id": "order_Odx1012",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "33723",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 14,
+          "record_id": "pay_Gz8x1012"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1013",
+      "order_id": "order_Odx1013",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "60774",
+      "expected_net_cents": "34519",
+      "expected_ledger_cents": "34519",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 15,
+          "record_id": "pay_Gz8x1013"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 13,
+          "record_id": "set_Bnk9x2013",
+          "utr": "UTR379995032"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 13,
+          "record_id": "led_Lgr1x3013"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1014",
+      "order_id": "order_Odx1014",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "98660",
+      "expected_net_cents": "77471",
+      "expected_ledger_cents": "77471",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 16,
+          "record_id": "pay_Gz8x1014"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 14,
+          "record_id": "set_Bnk9x2014",
+          "utr": "UTR319321646"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 14,
+          "record_id": "led_Lgr1x3014"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1015",
+      "order_id": "order_Odx1015",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "84644",
+      "expected_net_cents": "127358",
+      "expected_ledger_cents": "127358",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 17,
+          "record_id": "pay_Gz8x1015"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 15,
+          "record_id": "set_Bnk9x2015",
+          "utr": "UTR819112790"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 15,
+          "record_id": "led_Lgr1x3015"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1016",
+      "order_id": "order_Odx1016",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "33679",
+      "expected_net_cents": "106653",
+      "expected_ledger_cents": "106653",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 18,
+          "record_id": "pay_Gz8x1016"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 16,
+          "record_id": "set_Bnk9x2016",
+          "utr": "UTR869005091"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 16,
+          "record_id": "led_Lgr1x3016"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1017",
+      "order_id": "order_Odx1017",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "17338",
+      "expected_net_cents": "84805",
+      "expected_ledger_cents": "84805",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 19,
+          "record_id": "pay_Gz8x1017"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 17,
+          "record_id": "set_Bnk9x2017",
+          "utr": "UTR437352358"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 17,
+          "record_id": "led_Lgr1x3017"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1018",
+      "order_id": "order_Odx1018",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "149422",
+      "expected_net_cents": "58982",
+      "expected_ledger_cents": "58982",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 20,
+          "record_id": "pay_Gz8x1018"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 18,
+          "record_id": "set_Bnk9x2018",
+          "utr": "UTR356287095"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 18,
+          "record_id": "led_Lgr1x3018"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1019",
+      "order_id": "order_Odx1019",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "18068",
+      "expected_net_cents": "68098",
+      "expected_ledger_cents": "68098",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 21,
+          "record_id": "pay_Gz8x1019"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 19,
+          "record_id": "set_Bnk9x2019",
+          "utr": "UTR385201412"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 19,
+          "record_id": "led_Lgr1x3019"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1020",
+      "order_id": "order_Odx1020",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "1484",
+      "expected_net_cents": "69349",
+      "expected_ledger_cents": "69349",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 22,
+          "record_id": "pay_Gz8x1020"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 20,
+          "record_id": "set_Bnk9x2020",
+          "utr": "UTR524971817"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 20,
+          "record_id": "led_Lgr1x3020"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1021",
+      "order_id": "order_Odx1021",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "96203",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 23,
+          "record_id": "pay_Gz8x1021"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1022",
+      "order_id": "order_Odx1022",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "138443",
+      "expected_net_cents": "103146",
+      "expected_ledger_cents": "103146",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 24,
+          "record_id": "pay_Gz8x1022"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 21,
+          "record_id": "set_Bnk9x2022",
+          "utr": "UTR240529481"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 21,
+          "record_id": "led_Lgr1x3022"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1023",
+      "order_id": "order_Odx1023",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "131930",
+      "expected_net_cents": "100699",
+      "expected_ledger_cents": "100699",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 25,
+          "record_id": "pay_Gz8x1023"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 22,
+          "record_id": "set_Bnk9x2023",
+          "utr": "UTR821221887"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 22,
+          "record_id": "led_Lgr1x3023"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1024",
+      "order_id": "order_Odx1024",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "13762",
+      "expected_net_cents": "78100",
+      "expected_ledger_cents": "78100",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 26,
+          "record_id": "pay_Gz8x1024"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 23,
+          "record_id": "set_Bnk9x2024",
+          "utr": "UTR793101194"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 23,
+          "record_id": "led_Lgr1x3024"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1025",
+      "order_id": "order_Odx1025",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "20130",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 27,
+          "record_id": "pay_Gz8x1025"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1026",
+      "order_id": "order_Odx1026",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "139408",
+      "expected_net_cents": "72426",
+      "expected_ledger_cents": "72426",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 28,
+          "record_id": "pay_Gz8x1026"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 24,
+          "record_id": "set_Bnk9x2026",
+          "utr": "UTR422119408"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 24,
+          "record_id": "led_Lgr1x3026"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1027",
+      "order_id": "order_Odx1027",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "66277",
+      "expected_net_cents": "106888",
+      "expected_ledger_cents": "106888",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 29,
+          "record_id": "pay_Gz8x1027"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 25,
+          "record_id": "set_Bnk9x2027",
+          "utr": "UTR590941149"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 25,
+          "record_id": "led_Lgr1x3027"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1028",
+      "order_id": "order_Odx1028",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "88658",
+      "expected_net_cents": "65976",
+      "expected_ledger_cents": "65976",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 30,
+          "record_id": "pay_Gz8x1028"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 26,
+          "record_id": "set_Bnk9x2028",
+          "utr": "UTR439492674"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 26,
+          "record_id": "led_Lgr1x3028"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1029",
+      "order_id": "order_Odx1029",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "9772",
+      "expected_net_cents": "68391",
+      "expected_ledger_cents": "68391",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 31,
+          "record_id": "pay_Gz8x1029"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 27,
+          "record_id": "set_Bnk9x2029",
+          "utr": "UTR907308348"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 27,
+          "record_id": "led_Lgr1x3029"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1030",
+      "order_id": "order_Odx1030",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "42493",
+      "expected_net_cents": "112445",
+      "expected_ledger_cents": "112445",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 32,
+          "record_id": "pay_Gz8x1030"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 28,
+          "record_id": "set_Bnk9x2030",
+          "utr": "UTR177892576"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 28,
+          "record_id": "led_Lgr1x3030"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1031",
+      "order_id": "order_Odx1031",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "71428",
+      "expected_net_cents": "63766",
+      "expected_ledger_cents": "63766",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 33,
+          "record_id": "pay_Gz8x1031"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 29,
+          "record_id": "set_Bnk9x2031",
+          "utr": "UTR110002396"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 29,
+          "record_id": "led_Lgr1x3031"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1032",
+      "order_id": "order_Odx1032",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "53790",
+      "expected_net_cents": "90309",
+      "expected_ledger_cents": "90309",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 34,
+          "record_id": "pay_Gz8x1032"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 30,
+          "record_id": "set_Bnk9x2032",
+          "utr": "UTR592080329"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 30,
+          "record_id": "led_Lgr1x3032"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1033",
+      "order_id": "order_Odx1033",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "147641",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 35,
+          "record_id": "pay_Gz8x1033"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1034",
+      "order_id": "order_Odx1034",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "17281",
+      "expected_net_cents": "127212",
+      "expected_ledger_cents": "127212",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 36,
+          "record_id": "pay_Gz8x1034"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 31,
+          "record_id": "set_Bnk9x2034",
+          "utr": "UTR766964667"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 31,
+          "record_id": "led_Lgr1x3034"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1035",
+      "order_id": "order_Odx1035",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "42503",
+      "expected_net_cents": "45504",
+      "expected_ledger_cents": "45504",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 37,
+          "record_id": "pay_Gz8x1035"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 32,
+          "record_id": "set_Bnk9x2035",
+          "utr": "UTR704509817"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 32,
+          "record_id": "led_Lgr1x3035"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1036",
+      "order_id": "order_Odx1036",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "98170",
+      "expected_net_cents": "77016",
+      "expected_ledger_cents": "77016",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 38,
+          "record_id": "pay_Gz8x1036"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 33,
+          "record_id": "set_Bnk9x2036",
+          "utr": "UTR207354053"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 33,
+          "record_id": "led_Lgr1x3036"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1037",
+      "order_id": "order_Odx1037",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "61555",
+      "expected_net_cents": "111994",
+      "expected_ledger_cents": "111994",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 39,
+          "record_id": "pay_Gz8x1037"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 34,
+          "record_id": "set_Bnk9x2037",
+          "utr": "UTR178663096"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 34,
+          "record_id": "led_Lgr1x3037"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1038",
+      "order_id": "order_Odx1038",
+      "expected_diagnosis": "MISSING_LEDGER_RECORD",
+      "expected_primary_exception": "ERR_MISSING_LEDGER",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "LEDGER"
+      ],
+      "expected_gross_cents": "57466",
+      "expected_net_cents": "45171",
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 40,
+          "record_id": "pay_Gz8x1038"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 35,
+          "record_id": "set_Bnk9x2038",
+          "utr": "UTR677280546"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1039",
+      "order_id": "order_Odx1039",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "64028",
+      "expected_net_cents": "33034",
+      "expected_ledger_cents": "33034",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 41,
+          "record_id": "pay_Gz8x1039"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 36,
+          "record_id": "set_Bnk9x2039",
+          "utr": "UTR328872698"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 35,
+          "record_id": "led_Lgr1x3039"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1040",
+      "order_id": "order_Odx1040",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "81787",
+      "expected_net_cents": "48885",
+      "expected_ledger_cents": "48885",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 42,
+          "record_id": "pay_Gz8x1040"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 37,
+          "record_id": "set_Bnk9x2040",
+          "utr": "UTR643189555"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 36,
+          "record_id": "led_Lgr1x3040"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1041",
+      "order_id": "order_Odx1041",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "80138",
+      "expected_net_cents": "117819",
+      "expected_ledger_cents": "117819",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 43,
+          "record_id": "pay_Gz8x1041"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 38,
+          "record_id": "set_Bnk9x2041",
+          "utr": "UTR384756779"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 37,
+          "record_id": "led_Lgr1x3041"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1042",
+      "order_id": "order_Odx1042",
+      "expected_diagnosis": "BANK_REJECTED",
+      "expected_primary_exception": "ERR_BANK_REJECTION",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "LEDGER"
+      ],
+      "expected_gross_cents": "11126",
+      "expected_net_cents": "108248",
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 44,
+          "record_id": "pay_Gz8x1042"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 39,
+          "record_id": "set_Bnk9x2042",
+          "utr": "UTR242224154"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1043",
+      "order_id": "order_Odx1043",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "87259",
+      "expected_net_cents": "129566",
+      "expected_ledger_cents": "129566",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 45,
+          "record_id": "pay_Gz8x1043"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 40,
+          "record_id": "set_Bnk9x2043",
+          "utr": "UTR474745382"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 38,
+          "record_id": "led_Lgr1x3043"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1044",
+      "order_id": "order_Odx1044",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "78895",
+      "expected_net_cents": "12703",
+      "expected_ledger_cents": "12703",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 46,
+          "record_id": "pay_Gz8x1044"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 41,
+          "record_id": "set_Bnk9x2044",
+          "utr": "UTR173864104"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 39,
+          "record_id": "led_Lgr1x3044"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1045",
+      "order_id": "order_Odx1045",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "59972",
+      "expected_net_cents": "78061",
+      "expected_ledger_cents": "78061",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 47,
+          "record_id": "pay_Gz8x1045"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 42,
+          "record_id": "set_Bnk9x2045",
+          "utr": "UTR362298393"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 40,
+          "record_id": "led_Lgr1x3045"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1046",
+      "order_id": "order_Odx1046",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "93553",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 48,
+          "record_id": "pay_Gz8x1046"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1047",
+      "order_id": "order_Odx1047",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "140056",
+      "expected_net_cents": "125898",
+      "expected_ledger_cents": "125898",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 49,
+          "record_id": "pay_Gz8x1047"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 43,
+          "record_id": "set_Bnk9x2047",
+          "utr": "UTR496776692"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 41,
+          "record_id": "led_Lgr1x3047"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1048",
+      "order_id": "order_Odx1048",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "81939",
+      "expected_net_cents": "77181",
+      "expected_ledger_cents": "77181",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 50,
+          "record_id": "pay_Gz8x1048"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 44,
+          "record_id": "set_Bnk9x2048",
+          "utr": "UTR406002884"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 42,
+          "record_id": "led_Lgr1x3048"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1049",
+      "order_id": "order_Odx1049",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "2166",
+      "expected_net_cents": "139710",
+      "expected_ledger_cents": "139710",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 51,
+          "record_id": "pay_Gz8x1049"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 45,
+          "record_id": "set_Bnk9x2049",
+          "utr": "UTR269379374"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 43,
+          "record_id": "led_Lgr1x3049"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1050",
+      "order_id": "order_Odx1050",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "133567",
+      "expected_net_cents": "86154",
+      "expected_ledger_cents": "86154",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 52,
+          "record_id": "pay_Gz8x1050"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 46,
+          "record_id": "set_Bnk9x2050",
+          "utr": "UTR570497096"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 44,
+          "record_id": "led_Lgr1x3050"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1051",
+      "order_id": "order_Odx1051",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "31336",
+      "expected_net_cents": "60678",
+      "expected_ledger_cents": "60678",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 53,
+          "record_id": "pay_Gz8x1051"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 47,
+          "record_id": "set_Bnk9x2051",
+          "utr": "UTR995226828"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 45,
+          "record_id": "led_Lgr1x3051"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1052",
+      "order_id": "order_Odx1052",
+      "expected_diagnosis": "CONFLICTING_EVIDENCE",
+      "expected_primary_exception": "ERR_CONFLICTING_EVIDENCE",
+      "expected_severity": "CRITICAL",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "95508",
+      "expected_net_cents": "51115",
+      "expected_ledger_cents": "51115",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 54,
+          "record_id": "pay_Gz8x1052"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 48,
+          "record_id": "set_Bnk9x2052",
+          "utr": "UTR683275843"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 46,
+          "record_id": "led_Lgr1x3052"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1053",
+      "order_id": "order_Odx1053",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "20492",
+      "expected_net_cents": "9911",
+      "expected_ledger_cents": "9911",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 55,
+          "record_id": "pay_Gz8x1053"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 49,
+          "record_id": "set_Bnk9x2053",
+          "utr": "UTR855420240"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 47,
+          "record_id": "led_Lgr1x3053"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1054",
+      "order_id": "order_Odx1054",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "84575",
+      "expected_net_cents": "134828",
+      "expected_ledger_cents": "134828",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 56,
+          "record_id": "pay_Gz8x1054"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 50,
+          "record_id": "set_Bnk9x2054",
+          "utr": "UTR424825305"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 48,
+          "record_id": "led_Lgr1x3054"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1055",
+      "order_id": "order_Odx1055",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "125355",
+      "expected_net_cents": "102672",
+      "expected_ledger_cents": "102672",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 57,
+          "record_id": "pay_Gz8x1055"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 51,
+          "record_id": "set_Bnk9x2055",
+          "utr": "UTR756783995"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 49,
+          "record_id": "led_Lgr1x3055"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1056",
+      "order_id": "order_Odx1056",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "145857",
+      "expected_net_cents": "24591",
+      "expected_ledger_cents": "24591",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 58,
+          "record_id": "pay_Gz8x1056"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 52,
+          "record_id": "set_Bnk9x2056",
+          "utr": "UTR966616964"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 50,
+          "record_id": "led_Lgr1x3056"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1057",
+      "order_id": "order_Odx1057",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "53698",
+      "expected_net_cents": "29923",
+      "expected_ledger_cents": "29923",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 59,
+          "record_id": "pay_Gz8x1057"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 53,
+          "record_id": "set_Bnk9x2057",
+          "utr": "UTR802201721"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 51,
+          "record_id": "led_Lgr1x3057"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1058",
+      "order_id": "order_Odx1058",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "132331",
+      "expected_net_cents": "134158",
+      "expected_ledger_cents": "134158",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 60,
+          "record_id": "pay_Gz8x1058"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 54,
+          "record_id": "set_Bnk9x2058",
+          "utr": "UTR667945747"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 52,
+          "record_id": "led_Lgr1x3058"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1059",
+      "order_id": "order_Odx1059",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "120533",
+      "expected_net_cents": "41954",
+      "expected_ledger_cents": "41954",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 61,
+          "record_id": "pay_Gz8x1059"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 55,
+          "record_id": "set_Bnk9x2059",
+          "utr": "UTR108399996"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 53,
+          "record_id": "led_Lgr1x3059"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1060",
+      "order_id": "order_Odx1060",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "130953",
+      "expected_net_cents": "131417",
+      "expected_ledger_cents": "131417",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 62,
+          "record_id": "pay_Gz8x1060"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 56,
+          "record_id": "set_Bnk9x2060",
+          "utr": "UTR817112652"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 54,
+          "record_id": "led_Lgr1x3060"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1061",
+      "order_id": "order_Odx1061",
+      "expected_diagnosis": "CONFLICTING_EVIDENCE",
+      "expected_primary_exception": "ERR_CONFLICTING_EVIDENCE",
+      "expected_severity": "CRITICAL",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "46473",
+      "expected_net_cents": "77608",
+      "expected_ledger_cents": "77608",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 63,
+          "record_id": "pay_Gz8x1061"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 57,
+          "record_id": "set_Bnk9x2061",
+          "utr": "UTR977358886"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 55,
+          "record_id": "led_Lgr1x3061"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1062",
+      "order_id": "order_Odx1062",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "60371",
+      "expected_net_cents": "118070",
+      "expected_ledger_cents": "118070",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 64,
+          "record_id": "pay_Gz8x1062"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 58,
+          "record_id": "set_Bnk9x2062",
+          "utr": "UTR695499669"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 56,
+          "record_id": "led_Lgr1x3062"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1063",
+      "order_id": "order_Odx1063",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "76901",
+      "expected_net_cents": "61251",
+      "expected_ledger_cents": "61251",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 65,
+          "record_id": "pay_Gz8x1063"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 59,
+          "record_id": "set_Bnk9x2063",
+          "utr": "UTR421455482"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 57,
+          "record_id": "led_Lgr1x3063"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1064",
+      "order_id": "order_Odx1064",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "87508",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 66,
+          "record_id": "pay_Gz8x1064"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1065",
+      "order_id": "order_Odx1065",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "118178",
+      "expected_net_cents": "125325",
+      "expected_ledger_cents": "125325",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 67,
+          "record_id": "pay_Gz8x1065"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 60,
+          "record_id": "set_Bnk9x2065",
+          "utr": "UTR812308209"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 58,
+          "record_id": "led_Lgr1x3065"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1066",
+      "order_id": "order_Odx1066",
+      "expected_diagnosis": "CONFLICTING_EVIDENCE",
+      "expected_primary_exception": "ERR_CONFLICTING_EVIDENCE",
+      "expected_severity": "CRITICAL",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "29322",
+      "expected_net_cents": "67277",
+      "expected_ledger_cents": "67277",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 68,
+          "record_id": "pay_Gz8x1066"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 61,
+          "record_id": "set_Bnk9x2066",
+          "utr": "UTR211225158"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 59,
+          "record_id": "led_Lgr1x3066"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1067",
+      "order_id": "order_Odx1067",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "81229",
+      "expected_net_cents": "15149",
+      "expected_ledger_cents": "15149",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 69,
+          "record_id": "pay_Gz8x1067"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 62,
+          "record_id": "set_Bnk9x2067",
+          "utr": "UTR244193987"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 60,
+          "record_id": "led_Lgr1x3067"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1068",
+      "order_id": "order_Odx1068",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "93850",
+      "expected_net_cents": "68664",
+      "expected_ledger_cents": "68664",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 70,
+          "record_id": "pay_Gz8x1068"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 63,
+          "record_id": "set_Bnk9x2068",
+          "utr": "UTR383968123"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 61,
+          "record_id": "led_Lgr1x3068"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1069",
+      "order_id": "order_Odx1069",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "60958",
+      "expected_net_cents": "11606",
+      "expected_ledger_cents": "11606",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 71,
+          "record_id": "pay_Gz8x1069"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 64,
+          "record_id": "set_Bnk9x2069",
+          "utr": "UTR223940587"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 62,
+          "record_id": "led_Lgr1x3069"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1070",
+      "order_id": "order_Odx1070",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "101920",
+      "expected_net_cents": "24834",
+      "expected_ledger_cents": "24834",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 72,
+          "record_id": "pay_Gz8x1070"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 65,
+          "record_id": "set_Bnk9x2070",
+          "utr": "UTR214929002"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 63,
+          "record_id": "led_Lgr1x3070"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1071",
+      "order_id": "order_Odx1071",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "1060",
+      "expected_net_cents": "17805",
+      "expected_ledger_cents": "17805",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 73,
+          "record_id": "pay_Gz8x1071"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 66,
+          "record_id": "set_Bnk9x2071",
+          "utr": "UTR897163846"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 64,
+          "record_id": "led_Lgr1x3071"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1072",
+      "order_id": "order_Odx1072",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "49015",
+      "expected_net_cents": "141366",
+      "expected_ledger_cents": "141366",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 74,
+          "record_id": "pay_Gz8x1072"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 67,
+          "record_id": "set_Bnk9x2072",
+          "utr": "UTR694019365"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 65,
+          "record_id": "led_Lgr1x3072"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1073",
+      "order_id": "order_Odx1073",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "135276",
+      "expected_net_cents": "134011",
+      "expected_ledger_cents": "134011",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 75,
+          "record_id": "pay_Gz8x1073"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 68,
+          "record_id": "set_Bnk9x2073",
+          "utr": "UTR266910922"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 66,
+          "record_id": "led_Lgr1x3073"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1074",
+      "order_id": "order_Odx1074",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "50943",
+      "expected_net_cents": "43631",
+      "expected_ledger_cents": "43631",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 76,
+          "record_id": "pay_Gz8x1074"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 69,
+          "record_id": "set_Bnk9x2074",
+          "utr": "UTR392431670"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 67,
+          "record_id": "led_Lgr1x3074"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1075",
+      "order_id": "order_Odx1075",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "7886",
+      "expected_net_cents": "130747",
+      "expected_ledger_cents": "130747",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 77,
+          "record_id": "pay_Gz8x1075"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 70,
+          "record_id": "set_Bnk9x2075",
+          "utr": "UTR402533494"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 68,
+          "record_id": "led_Lgr1x3075"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1076",
+      "order_id": "order_Odx1076",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "133034",
+      "expected_net_cents": "113954",
+      "expected_ledger_cents": "113954",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 78,
+          "record_id": "pay_Gz8x1076"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 71,
+          "record_id": "set_Bnk9x2076",
+          "utr": "UTR749431082"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 69,
+          "record_id": "led_Lgr1x3076"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1077",
+      "order_id": "order_Odx1077",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "103456",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 79,
+          "record_id": "pay_Gz8x1077"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1078",
+      "order_id": "order_Odx1078",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "8483",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 80,
+          "record_id": "pay_Gz8x1078"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1079",
+      "order_id": "order_Odx1079",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "80139",
+      "expected_net_cents": "23629",
+      "expected_ledger_cents": "23629",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 81,
+          "record_id": "pay_Gz8x1079"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 72,
+          "record_id": "set_Bnk9x2079",
+          "utr": "UTR326161867"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 70,
+          "record_id": "led_Lgr1x3079"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1080",
+      "order_id": "order_Odx1080",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "136121",
+      "expected_net_cents": "112819",
+      "expected_ledger_cents": "112819",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 82,
+          "record_id": "pay_Gz8x1080"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 73,
+          "record_id": "set_Bnk9x2080",
+          "utr": "UTR870530217"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 71,
+          "record_id": "led_Lgr1x3080"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1081",
+      "order_id": "order_Odx1081",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "113015",
+      "expected_net_cents": "73410",
+      "expected_ledger_cents": "73410",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 83,
+          "record_id": "pay_Gz8x1081"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 74,
+          "record_id": "set_Bnk9x2081",
+          "utr": "UTR468164906"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 72,
+          "record_id": "led_Lgr1x3081"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1082",
+      "order_id": "order_Odx1082",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "12545",
+      "expected_net_cents": "124590",
+      "expected_ledger_cents": "124590",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 84,
+          "record_id": "pay_Gz8x1082"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 75,
+          "record_id": "set_Bnk9x2082",
+          "utr": "UTR318610946"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 73,
+          "record_id": "led_Lgr1x3082"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1083",
+      "order_id": "order_Odx1083",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "23474",
+      "expected_net_cents": "56729",
+      "expected_ledger_cents": "56729",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 85,
+          "record_id": "pay_Gz8x1083"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 76,
+          "record_id": "set_Bnk9x2083",
+          "utr": "UTR838194420"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 74,
+          "record_id": "led_Lgr1x3083"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1084",
+      "order_id": "order_Odx1084",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "50301",
+      "expected_net_cents": "73705",
+      "expected_ledger_cents": "73705",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 86,
+          "record_id": "pay_Gz8x1084"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 77,
+          "record_id": "set_Bnk9x2084",
+          "utr": "UTR781007818"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 75,
+          "record_id": "led_Lgr1x3084"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1085",
+      "order_id": "order_Odx1085",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "135821",
+      "expected_net_cents": "34825",
+      "expected_ledger_cents": "34825",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 87,
+          "record_id": "pay_Gz8x1085"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 78,
+          "record_id": "set_Bnk9x2085",
+          "utr": "UTR383450553"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 76,
+          "record_id": "led_Lgr1x3085"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1086",
+      "order_id": "order_Odx1086",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "59108",
+      "expected_net_cents": "13542",
+      "expected_ledger_cents": "13542",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 88,
+          "record_id": "pay_Gz8x1086"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 79,
+          "record_id": "set_Bnk9x2086",
+          "utr": "UTR642678844"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 77,
+          "record_id": "led_Lgr1x3086"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1087",
+      "order_id": "order_Odx1087",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "134774",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 89,
+          "record_id": "pay_Gz8x1087"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1088",
+      "order_id": "order_Odx1088",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "51083",
+      "expected_net_cents": "132972",
+      "expected_ledger_cents": "132972",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 90,
+          "record_id": "pay_Gz8x1088"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 80,
+          "record_id": "set_Bnk9x2088",
+          "utr": "UTR624557080"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 78,
+          "record_id": "led_Lgr1x3088"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1089",
+      "order_id": "order_Odx1089",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "80584",
+      "expected_net_cents": "24772",
+      "expected_ledger_cents": "24772",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 91,
+          "record_id": "pay_Gz8x1089"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 81,
+          "record_id": "set_Bnk9x2089",
+          "utr": "UTR369639388"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 79,
+          "record_id": "led_Lgr1x3089"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1090",
+      "order_id": "order_Odx1090",
+      "expected_diagnosis": "MISSING_BANK_RECORD",
+      "expected_primary_exception": "ERR_MISSING_BANK",
+      "expected_severity": "HIGH",
+      "expected_status": "EXCEPTION",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": false,
+      "expected_missing_records": [
+        "BANK",
+        "LEDGER"
+      ],
+      "expected_gross_cents": "64863",
+      "expected_net_cents": null,
+      "expected_ledger_cents": null,
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 92,
+          "record_id": "pay_Gz8x1090"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1091",
+      "order_id": "order_Odx1091",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "68750",
+      "expected_net_cents": "126227",
+      "expected_ledger_cents": "126227",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 93,
+          "record_id": "pay_Gz8x1091"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 82,
+          "record_id": "set_Bnk9x2091",
+          "utr": "UTR154544899"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 80,
+          "record_id": "led_Lgr1x3091"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1092",
+      "order_id": "order_Odx1092",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "13204",
+      "expected_net_cents": "134331",
+      "expected_ledger_cents": "134331",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 94,
+          "record_id": "pay_Gz8x1092"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 83,
+          "record_id": "set_Bnk9x2092",
+          "utr": "UTR199104722"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 81,
+          "record_id": "led_Lgr1x3092"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1093",
+      "order_id": "order_Odx1093",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "97871",
+      "expected_net_cents": "85710",
+      "expected_ledger_cents": "85710",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 95,
+          "record_id": "pay_Gz8x1093"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 84,
+          "record_id": "set_Bnk9x2093",
+          "utr": "UTR781057736"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 82,
+          "record_id": "led_Lgr1x3093"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1094",
+      "order_id": "order_Odx1094",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "36543",
+      "expected_net_cents": "25367",
+      "expected_ledger_cents": "25367",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 96,
+          "record_id": "pay_Gz8x1094"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 85,
+          "record_id": "set_Bnk9x2094",
+          "utr": "UTR554811020"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 83,
+          "record_id": "led_Lgr1x3094"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1095",
+      "order_id": "order_Odx1095",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "39180",
+      "expected_net_cents": "22599",
+      "expected_ledger_cents": "22599",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 97,
+          "record_id": "pay_Gz8x1095"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 86,
+          "record_id": "set_Bnk9x2095",
+          "utr": "UTR990505735"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 84,
+          "record_id": "led_Lgr1x3095"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1096",
+      "order_id": "order_Odx1096",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "18065",
+      "expected_net_cents": "138473",
+      "expected_ledger_cents": "138473",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 98,
+          "record_id": "pay_Gz8x1096"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 87,
+          "record_id": "set_Bnk9x2096",
+          "utr": "UTR397083132"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 85,
+          "record_id": "led_Lgr1x3096"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1097",
+      "order_id": "order_Odx1097",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "136296",
+      "expected_net_cents": "24323",
+      "expected_ledger_cents": "24323",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 99,
+          "record_id": "pay_Gz8x1097"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 88,
+          "record_id": "set_Bnk9x2097",
+          "utr": "UTR147337803"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 86,
+          "record_id": "led_Lgr1x3097"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1098",
+      "order_id": "order_Odx1098",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "103902",
+      "expected_net_cents": "57327",
+      "expected_ledger_cents": "57327",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 100,
+          "record_id": "pay_Gz8x1098"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 89,
+          "record_id": "set_Bnk9x2098",
+          "utr": "UTR103807155"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 87,
+          "record_id": "led_Lgr1x3098"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1099",
+      "order_id": "order_Odx1099",
+      "expected_diagnosis": "SUCCESSFULLY_SETTLED",
+      "expected_primary_exception": null,
+      "expected_severity": "NONE",
+      "expected_status": "RESOLVED",
+      "expected_chain_completeness": true,
+      "expected_orphan_state": false,
+      "expected_missing_records": [],
+      "expected_gross_cents": "19037",
+      "expected_net_cents": "27159",
+      "expected_ledger_cents": "27159",
+      "physical_references": {
+        "GATEWAY": {
+          "file": "data/gateway.csv",
+          "line_number": 101,
+          "record_id": "pay_Gz8x1099"
+        },
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 90,
+          "record_id": "set_Bnk9x2099",
+          "utr": "UTR458153605"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 88,
+          "record_id": "led_Lgr1x3099"
+        }
+      }
+    },
+    {
+      "transaction_id": "pay_Gz8x1100",
+      "order_id": null,
+      "expected_diagnosis": "INSUFFICIENT_EVIDENCE",
+      "expected_primary_exception": "ERR_MISSING_GATEWAY",
+      "expected_severity": "CRITICAL",
+      "expected_status": "INSUFFICIENT_DATA",
+      "expected_chain_completeness": false,
+      "expected_orphan_state": true,
+      "expected_missing_records": [
+        "GATEWAY"
+      ],
+      "expected_gross_cents": null,
+      "expected_net_cents": "40450",
+      "expected_ledger_cents": "40450",
+      "physical_references": {
+        "BANK": {
+          "file": "data/bank.csv",
+          "line_number": 91,
+          "record_id": "set_Bnk9x2100",
+          "utr": "UTR927982963"
+        },
+        "LEDGER": {
+          "file": "data/ledger.csv",
+          "line_number": 89,
+          "record_id": "led_Lgr1x3100"
+        }
+      }
+    }
+  ]
+}

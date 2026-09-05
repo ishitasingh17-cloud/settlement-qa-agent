@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Visual Design System Tokens — Strictly Grounded in docs/design.md
+ * Core Motto: Precise · Calm · Intelligent · Trustworthy · Investigative
+ */
+:root {
+  /* Base Palette Tokens (design.md Section 3.1) */
+  --color-bg: #F7F8FA;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-muted: #F1F3F6;
+  --color-text-primary: #172033;
+  --color-text-secondary: #667085;
+  --color-text-muted: #98A2B3;
+  --color-icon-primary: #172033;
+  --color-icon-secondary: #667085;
+  --color-icon-muted: #98A2B3;
+  --color-border: #E4E7EC;
+  --color-border-subtle: #EEF0F3;
+  --color-primary: #4F46E5;
+  --color-primary-dark: #3730A3;
+  --color-ai-tint: #EEF2FF;
+  --color-ai-border: #C7D2FE;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Explicit white icons render pure crisp white */
+svg[class*="text-white"],
+.text-white svg {
+  color: #FFFFFF !important;
+}

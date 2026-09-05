@@ -1,0 +1,334 @@
+{
+  "benchmark_version": "1.0.0",
+  "dataset_hashes": {
+    "data/gateway.csv": "8945186e3ded7e81b21834e1c5312656fdb3da1af0fd011d7768a2758f24bcff",
+    "data/bank.csv": "6db6886b96b1fd642a0a3df1d009bcbf93750090aaea8180a7cc4386c358edc4",
+    "data/ledger.csv": "89c5bfb92be8a81f45abfe07975affe711b54009daf59453951c54251722f504"
+  },
+  "timestamp": "2026-09-05T00:02:16.571434+00:00",
+  "runtime_seconds": 0.21,
+  "deterministic": {
+    "total_cases": 101,
+    "passed_cases": 101,
+    "accuracy": 1.0,
+    "diagnosis_macro_f1": 1.0,
+    "per_class_diagnosis": {
+      "SUCCESSFULLY_SETTLED": {
+        "tp": 84,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 84
+      },
+      "MISSING_BANK_RECORD": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 11
+      },
+      "BANK_REJECTED": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "MISSING_LEDGER_RECORD": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "CONFLICTING_EVIDENCE": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3
+      },
+      "INSUFFICIENT_EVIDENCE": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      }
+    },
+    "exception_metrics": {
+      "ERR_MISSING_BANK": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 11
+      },
+      "ERR_BANK_REJECTION": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "ERR_MISSING_LEDGER": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "ERR_CONFLICTING_EVIDENCE": {
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3
+      },
+      "ERR_MISSING_GATEWAY": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      }
+    },
+    "severity_metrics": {
+      "NONE": {
+        "tp": 84,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 84
+      },
+      "HIGH": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 13
+      },
+      "CRITICAL": {
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 4
+      }
+    },
+    "status_metrics": {
+      "SETTLED": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 0
+      },
+      "EXCEPTION": {
+        "tp": 16,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 16
+      },
+      "INSUFFICIENT_DATA": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      }
+    },
+    "missing_record_metrics": {
+      "GATEWAY": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1
+      },
+      "BANK": {
+        "tp": 11,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 11
+      },
+      "LEDGER": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 13
+      }
+    },
+    "reference_accuracy": 1.0,
+    "monetary_accuracy": 1.0,
+    "veo_structural_validity": 1.0,
+    "diagnosis_confusion_matrix": {
+      "labels": [
+        "SUCCESSFULLY_SETTLED",
+        "MISSING_BANK_RECORD",
+        "BANK_REJECTED",
+        "MISSING_LEDGER_RECORD",
+        "CONFLICTING_EVIDENCE",
+        "INSUFFICIENT_EVIDENCE"
+      ],
+      "matrix": {
+        "SUCCESSFULLY_SETTLED": {
+          "SUCCESSFULLY_SETTLED": 84,
+          "MISSING_BANK_RECORD": 0,
+          "BANK_REJECTED": 0,
+          "MISSING_LEDGER_RECORD": 0,
+          "CONFLICTING_EVIDENCE": 0,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "MISSING_BANK_RECORD": {
+          "SUCCESSFULLY_SETTLED": 0,
+          "MISSING_BANK_RECORD": 11,
+          "BANK_REJECTED": 0,
+          "MISSING_LEDGER_RECORD": 0,
+          "CONFLICTING_EVIDENCE": 0,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "BANK_REJECTED": {
+          "SUCCESSFULLY_SETTLED": 0,
+          "MISSING_BANK_RECORD": 0,
+          "BANK_REJECTED": 1,
+          "MISSING_LEDGER_RECORD": 0,
+          "CONFLICTING_EVIDENCE": 0,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "MISSING_LEDGER_RECORD": {
+          "SUCCESSFULLY_SETTLED": 0,
+          "MISSING_BANK_RECORD": 0,
+          "BANK_REJECTED": 0,
+          "MISSING_LEDGER_RECORD": 1,
+          "CONFLICTING_EVIDENCE": 0,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "CONFLICTING_EVIDENCE": {
+          "SUCCESSFULLY_SETTLED": 0,
+          "MISSING_BANK_RECORD": 0,
+          "BANK_REJECTED": 0,
+          "MISSING_LEDGER_RECORD": 0,
+          "CONFLICTING_EVIDENCE": 3,
+          "INSUFFICIENT_EVIDENCE": 0
+        },
+        "INSUFFICIENT_EVIDENCE": {
+          "SUCCESSFULLY_SETTLED": 0,
+          "MISSING_BANK_RECORD": 0,
+          "BANK_REJECTED": 0,
+          "MISSING_LEDGER_RECORD": 0,
+          "CONFLICTING_EVIDENCE": 0,
+          "INSUFFICIENT_EVIDENCE": 1
+        }
+      }
+    },
+    "severity_confusion_matrix": {
+      "labels": [
+        "NONE",
+        "HIGH",
+        "CRITICAL"
+      ],
+      "matrix": {
+        "NONE": {
+          "NONE": 84,
+          "HIGH": 0,
+          "CRITICAL": 0
+        },
+        "HIGH": {
+          "NONE": 0,
+          "HIGH": 13,
+          "CRITICAL": 0
+        },
+        "CRITICAL": {
+          "NONE": 0,
+          "HIGH": 0,
+          "CRITICAL": 4
+        }
+      }
+    }
+  },
+  "ai_safety": {
+    "total_ai_cases": 24,
+    "valid_grounded_cases": 6,
+    "validator_rejected_cases": 18,
+    "fallback_enforced_cases": 18,
+    "unsupported_claims_detected": 6,
+    "fabricated_identifiers_detected": 3,
+    "numeric_violations_detected": 2,
+    "temporal_violations_detected": 3,
+    "epistemic_violations_detected": 0,
+    "grounding_compliance_rate": 1.0,
+    "validation_detection_rate": 1.0,
+    "unsafe_claim_escape_rate": 0.0,
+    "fallback_safety_rate": 1.0
+  },
+  "conversation": {
+    "total_turns_evaluated": 6,
+    "epistemic_invariance_rate": 1.0,
+    "history_budget_compliance_rate": 1.0,
+    "cross_context_leakage_rate": 0.0
+  },
+  "api": {
+    "endpoints_evaluated": 8,
+    "all_endpoints_healthy": true,
+    "parity_mismatches": 0,
+    "date_filter_accuracy": 1.0
+  },
+  "thresholds": {
+    "min_diagnosis_accuracy": 0.98,
+    "min_exception_f1": 0.98,
+    "min_status_accuracy": 0.98,
+    "min_severity_accuracy": 0.98,
+    "min_reference_accuracy": 1.0,
+    "min_monetary_accuracy": 1.0,
+    "min_veo_structural_validity": 1.0,
+    "max_unsafe_claim_escape_rate": 0.0,
+    "max_cross_context_leakage_rate": 0.0,
+    "min_api_parity": 1.0
+  },
+  "passed_all_thresholds": true,
+  "failed_cases": []
+}
