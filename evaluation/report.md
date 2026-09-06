@@ -1,8 +1,8 @@
 # PS-8 Settlement Q&A Agent — Benchmark Evaluation Scorecard
 
 **Benchmark Version:** `1.0.0`  
-**Evaluation Timestamp:** `2026-09-05T00:02:16.571434+00:00`  
-**Total Runtime:** `0.21s`  
+**Evaluation Timestamp:** `2026-09-06T12:53:55.985195+00:00`  
+**Total Runtime:** `0.24s`  
 **Overall Benchmark Status:** **PASSED (100% OF THRESHOLDS MET)**
 
 ---
